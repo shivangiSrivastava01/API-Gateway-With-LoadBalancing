@@ -1,4 +1,4 @@
-# APIGatewayWithLoadBalancing
+# API-Gateway-With-LoadBalancing
 Demo Project for API Gateway with Load Balancing
 
 ## Add dependency in pom.xml file

@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+        routes:
+        - id: serviceA
+          uri: lb://v1/callServiceA
+          predicates:
+            - Path=/v1/**
+          filters:
+            - AddResponseHeader=X-Powered-By, API Gateway ServiceA
+        - id: serviceB
+          uri: lb://v1/callServiceB
+          predicates:
+            - Path=/v1/**
+          filters:
+            - AddResponseHeader=X-Powered-By, API Gateway ServiceB
+  main:
+    web-application-type: reactive
+  loadbalancer:
+    retry:
+      enabled: true
+
